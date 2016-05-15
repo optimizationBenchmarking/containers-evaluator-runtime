@@ -1,5 +1,5 @@
 #
-# optimizationbenchmarking/linux-evaluator-runtime
+# optimizationbenchmarking/evaluator-runtime
 #
 # This is the image of the basic runtime components needed
 # by the elements of the optimizationBenchmarking evaluator.
