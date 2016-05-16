@@ -19,7 +19,7 @@ RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main' >> /etc/
     apt-get update &&\
     apt-get autoclean -y &&\
     apt-get autoremove -y &&\
-    apt-get update     &&\
+    apt-get update &&\
     apt-get install -f -y apt-utils &&\
     apt-get install -f -y ca-certificates-java \
                           ghostscript=9.06* \
@@ -32,6 +32,7 @@ RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main' >> /etc/
                           texlive-fonts-recommended \
                           texlive-luatex \
                           texlive-xetex &&\
+    /var/lib/dpkg/info/ca-certificates-java.postinst configure &&\
     cd /tmp/ &&\
     R_params="repos=c(\"http://cran.us.r-project.org\", \"http://cran.uk.r-project.org\",  \"http://mirrors.ustc.edu.cn/CRAN\", \"http://cran.wu.ac.at/\", \"http://cran.utstat.utoronto.ca/\", \"http://cran.rstudio.com/\", \"https://cran.uni-muenster.de/\", \"http://ftp.iitm.ac.in/cran/\" ), dependencies=TRUE, clean=TRUE" &&\
     Rscript -e "update.packages(ask=FALSE, ${R_params})" &&\
