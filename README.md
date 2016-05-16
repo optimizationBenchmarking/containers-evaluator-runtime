@@ -3,6 +3,7 @@
 [![Image Size](https://img.shields.io/imagelayers/image-size/optimizationbenchmarking/evaluator-runtime/latest.svg)](https://hub.docker.com/r/optimizationbenchmarking/evaluator-runtime/)
 [![Image Layers](https://img.shields.io/imagelayers/layers/optimizationbenchmarking/evaluator-runtime/latest.svg)](https://hub.docker.com/r/optimizationbenchmarking/evaluator-runtime/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/optimizationbenchmarking/evaluator-runtime.svg)](https://hub.docker.com/r/optimizationbenchmarking/evaluator-runtime/)
+[![Docker Pulls](https://img.shields.io/docker/stars/optimizationbenchmarking/evaluator-runtime.svg)](https://hub.docker.com/r/optimizationbenchmarking/evaluator-runtime/)
 
 The current version of this image is 0.8.5.
 
