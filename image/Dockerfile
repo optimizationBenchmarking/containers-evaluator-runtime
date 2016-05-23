@@ -49,11 +49,16 @@ RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main' >> /etc/
                         libicu-dev \
                         make \
                         r-base-dev \
+                        texlive-fonts-extra-doc \
+                        texlive-fonts-recommended-doc \
+                        texlive-humanities-doc \
                         texlive-latex-base-doc \
                         texlive-latex-extra-doc \
-                        texlive-fonts-recommended-doc \
+                        texlive-latex-recommended-doc \
+                        texlive-metapost-doc \
                         texlive-pictures-doc \
-                        texlive-pstricks-doc &&\
+                        texlive-pstricks-doc \
+                        texlive-science-doc &&\
     apt-get clean &&\
     apt-get autoclean -y &&\
     apt-get autoremove -y &&\
