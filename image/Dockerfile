@@ -3,11 +3,10 @@
 #
 # This is the image of the basic runtime components needed
 # by the elements of the optimizationBenchmarking evaluator.
-# 
-# 
+#
+#
 FROM debian:8.4
 MAINTAINER Thomas Weise <tweise@ustc.edu.cn>
-
 RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main' >> /etc/apt/sources.list.d/jessie-backports.list &&\
     echo 'deb http://cloud.r-project.org/bin/linux/debian jessie-cran3/' >> /etc/apt/sources.list &&\
     echo 'deb http://cran.cnr.berkeley.edu/bin/linux/debian jessie-cran3/' >> /etc/apt/sources.list &&\
@@ -24,7 +23,7 @@ RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main' >> /etc/
     apt-get install -f -y ca-certificates-java \
                           ghostscript=9.06* \
                           libicu-dev \
-                          openjdk-8-jdk \ 
+                          openjdk-8-jdk \
                           pkg-config \
                           r-base=3.3.* \
                           r-base-dev=3.3.*  \
@@ -45,9 +44,10 @@ RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main' >> /etc/
     Rscript -e "if(!(require(\"vegan\"))) install.packages(\"vegan\", ${R_params})" &&\
     apt-get purge -f -y g++ \
                         gcc \
-                        gfortran \                        
+                        gfortran \
                         libicu-dev \
                         make \
+                        pkg-config \
                         r-base-dev \
                         texlive-fonts-extra-doc \
                         texlive-fonts-recommended-doc \
@@ -64,7 +64,6 @@ RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main' >> /etc/
     apt-get autoremove -y &&\
     apt-get clean &&\
     rm -rf /tmp/* /var/tmp/* &&\
-    rm -rf /var/lib/apt/lists/* &&\    
+    rm -rf /var/lib/apt/lists/* &&\
     rm -f /etc/ssh/ssh_host_*
-
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
